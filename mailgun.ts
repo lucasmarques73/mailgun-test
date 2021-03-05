@@ -1,4 +1,4 @@
-import * as Mailgun from "mailgun-js";
+import Mailgun = require("mailgun-js");
 
 const isLocal = process.env.REGION === "us-east-1-fake";
 
