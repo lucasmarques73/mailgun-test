@@ -1,5 +1,5 @@
 import { sendMessage } from './mailgun';
-import Mailgun from 'mailgun-js';
+import Mailgun = require('mailgun-js');
 
 const DOMAIN = 'gupy.com.br';
 
@@ -30,7 +30,7 @@ describe('Mailgun', () => {
         domain: DOMAIN
       });
 
-      mailgun.messages().send.mockResolvedValueOnce(response);
+      (mailgun.messages().send as any).mockResolvedValueOnce(response);
 
       const result = await sendMessage(message);
 
